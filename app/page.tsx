@@ -1,69 +1,93 @@
+import GithubIcon from "@/components/GithubIcon";
+import Navbar from "@/components/Navbar";
+import { Button } from "@/components/ui/button";
+import { ArrowDown } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="relative h-svh bg-linear-to-r from-[#b54220] to-[#ea562c]">
+      <Navbar />
+      <div className="px-20 mt-16 text-white text-center uppercase">
+        <h2 className="font-black text-[140px] leading-[90%]">
+          Software
+          <br />
+          Engineer
+        </h2>
+        <p className="text-3xl font-extrabold mt-2">
+          With 8 years of experience
+        </p>
+      </div>
+      <p className="px-20 mt-16 text-white font-medium text-2xl uppercase">
+        I translate loose
+        <br />
+        ideas into production
+        <br />
+        software
+      </p>
+      <Image
+        src="/me.png"
+        alt="Marko Ilic"
+        width={1254}
+        height={871}
+        className="z-10 absolute inset-x-0 bottom-0 mx-auto max-h-svh max-w-[70%]"
+      />
+      <div className="w-full absolute px-[10%] bottom-[20%] left-0 text-white/30 uppercase">
+        <h1 className="w-full text-center font-black text-[18em] whitespace-nowrap -mb-24">
+          Marko Ilic
+        </h1>
+        <p className="ml-52 text-2xl font-medium">&copy;2026</p>
+      </div>
+      <div className="pointer-events-none absolute inset-0">
+        {/* vertical lines */}
+        <div className="absolute inset-0 flex justify-between px-20">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="w-px bg-white/20" />
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* horizontal lines */}
+        <div className="absolute inset-0 flex flex-col justify-between py-32">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="h-px bg-white/20" />
+          ))}
         </div>
-      </main>
+
+        {/* crosses */}
+        <div className="absolute inset-0 flex flex-col justify-between py-32">
+          {[...Array(4)].map((_, r) => (
+            <div key={r} className="flex h-px justify-between px-20">
+              {[...Array(4)].map((_, c) => (
+                <div
+                  key={c}
+                  className="relative size-px before:absolute before:left-1/2 before:top-0 before:h-px before:w-3 before:-translate-x-1/2 before:bg-white after:absolute after:left-0 after:top-1/2 after:h-3 after:w-px after:-translate-y-1/2 after:bg-white"
+                />
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="z-20 h-full w-full pointer-events-none absolute left-0 bottom-0 bg-linear-to-b from-white/0 from-90% to-[#f85802]/30" />
+      <div className="z-20 h-1/4 w-full pointer-events-none absolute left-0 bottom-0 bg-white/10 backdrop-blur-lg backdrop-saturate-150 [mask-image:linear-gradient(to_bottom,transparent,black_90%)]" />
+      <div className="z-20 absolute bottom-12 right-20 flex flex-col gap-2">
+        <Button
+          variant="secondary"
+          className="text-white text-xl bg-black uppercase font-semibold w-72 h-14 cursor-pointer hover:bg-black/60"
+        >
+          Download CV
+          <ArrowDown className="size-7" />
+        </Button>
+        <Button
+          nativeButton={false}
+          render={<Link href="https://github.com/DleiaDev" target="_blank" />}
+          variant="secondary"
+          className="text-xl uppercase font-semibold w-72 h-14 cursor-pointer"
+        >
+          Visit GitHub
+          <GithubIcon className="size-7" />
+        </Button>
+      </div>
     </div>
   );
 }
