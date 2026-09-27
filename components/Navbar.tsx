@@ -16,7 +16,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="h-32 px-20 flex justify-between items-center">
+    <nav className="h-32 flex justify-between items-center">
       <Link href="/" className="text-white text-3xl font-bold">
         Marko Ilic®
       </Link>
@@ -34,13 +34,13 @@ export default function Navbar() {
           </li>
         ))}
         <li>
-          <Link
+          <a
             href="https://github.com/DleiaDev"
             target="_blank"
             className="text-white cursor-pointer"
           >
             <GithubIcon className="w-10 h-10" />
-          </Link>
+          </a>
         </li>
       </ul>
       <button className="w-16 h-6 flex flex-col justify-between cursor-pointer">
