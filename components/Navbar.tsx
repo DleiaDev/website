@@ -136,7 +136,7 @@ export default function Navbar() {
             <Link
               href={path}
               text={text}
-              className={`text-white text-xl font-medium underline underline-offset-5 hover:decoration-white ${
+              className={`text-white text-xl font-medium underline underline-offset-5 hover:text-white hover:decoration-white ${
                 pathname === path ? "decoration-white" : "decoration-white/50"
               }`}
             />
@@ -146,7 +146,7 @@ export default function Navbar() {
           <Link
             href="https://github.com/DleiaDev"
             aria-label="GitHub"
-            className="text-white"
+            className="text-white hover:text-white"
           >
             <GithubIcon className="w-10 h-10" />
           </Link>
