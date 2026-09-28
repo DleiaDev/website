@@ -11,24 +11,32 @@ export default function HomeHero() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="relative h-svh bg-linear-to-r from-[#b54220] to-[#ea562c]">
+    <div className="overflow-hidden relative h-svh bg-linear-to-r from-[#b54220] to-[#ea562c]">
       {/* In-flow content, painted beneath all positioned layers */}
       <div className={HERO_GUTTER}>
         <Navbar />
 
-        <div className="mt-16 text-white text-center uppercase">
-          <h1 className="font-black text-[140px] leading-[90%]">
+        <div className="text-white text-center uppercase mt-4 sm:mt-6 md:mt-8 lg:mt-16">
+          <h1 className="font-black leading-[90%] text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
             <span className="sr-only">Marko Ilic, </span>
             Software
             <br />
             Engineer
           </h1>
-          <p className="text-3xl font-extrabold mt-2">
+          <p className="font-extrabold mt-2 lg:text-2xl xl:text-3xl">
             With {currentYear - CAREER_START_YEAR} years of experience
           </p>
         </div>
 
-        <p className="mt-16 text-white font-medium text-2xl uppercase">
+        <p
+          className={cn(
+            "text-white font-medium uppercase",
+            "mt-10 text-center",
+            "mt-10 text-center md:text-xl",
+            "lg:text-left lg:mt-[3svh]",
+            "xl:text-2xl",
+          )}
+        >
           I translate loose
           <br />
           ideas into production
@@ -40,12 +48,35 @@ export default function HomeHero() {
       {/* Decorative name, the accessible name lives in the h1 */}
       <div
         aria-hidden
-        className="z-0 absolute inset-x-0 bottom-[20%] px-[10%] text-white/30 uppercase"
+        className={cn(
+          "z-0 absolute inset-x-0 text-white/30 uppercase",
+          "bottom-60 sm:bottom-[18svh] lg:bottom-[15svh]",
+          HERO_GUTTER,
+        )}
       >
-        <p className="w-full text-center font-black text-[18em] whitespace-nowrap -mb-24">
-          Marko Ilic
-        </p>
-        <p className="ml-52 text-2xl font-medium">&copy;{currentYear}</p>
+        {/* Shrink-wraps the name so the © line can align with its first glyph */}
+        <div
+          className={cn(
+            "w-fit xl:mx-auto",
+            "[--name-size:5rem]",
+            "xxxs:[--name-size:6rem]",
+            "xxs[--name-size:7rem]",
+            "xs:[--name-size:8rem]",
+            "sm:[--name-size:9rem]",
+            "md:[--name-size:10rem]",
+            "xl:[--name-size:14.5vw]",
+            "2xl:[--name-size:14vw]",
+          )}
+        >
+          <p className="font-black leading-none text-(length:--name-size) xl:whitespace-nowrap">
+            Marko <br className="xl:hidden" /> Ilic
+          </p>
+          {/* Offsets cancel the M's left side bearing and the space below the
+              baseline, both of which scale with --name-size */}
+          <p className="font-medium ml-[calc(var(--name-size)*0.06)] mt-[calc(var(--name-size)*-0.12)] text-lg sm:text-xl md:text-2xl">
+            &copy;{currentYear}
+          </p>
+        </div>
       </div>
 
       <HeroGrid className="z-10" />
@@ -57,7 +88,15 @@ export default function HomeHero() {
         height={871}
         loading="eager"
         fetchPriority="high"
-        className="z-20 absolute inset-x-0 bottom-0 mx-auto max-h-svh max-w-[70%] pointer-events-none"
+        className={cn(
+          "z-20 absolute bottom-0 pointer-events-none",
+          "max-w-170 -right-52",
+          "xs:max-w-190",
+          "md:max-w-200",
+          "xl:max-w-240 xl:inset-x-0 xl:mx-auto",
+          // Cap width so the height (via aspect ratio) never exceeds 50svh
+          "2xl:max-w-[min(50%,calc(60svh*1254/871))]",
+        )}
       />
 
       {/* Bottom glow */}
@@ -68,7 +107,7 @@ export default function HomeHero() {
 
       <div
         className={cn(
-          "z-50 absolute inset-x-0 bottom-12 flex justify-end",
+          "z-50 w-full absolute bottom-12 flex justify-center xl:justify-end",
           HERO_GUTTER,
         )}
       >

@@ -16,11 +16,14 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="h-32 flex justify-between items-center">
-      <Link href="/" className="text-white text-3xl font-bold">
+    <nav className="flex justify-between items-center h-18 xs:h-20 sm:h-24 md:h-28 xl:h-32">
+      <Link
+        href="/"
+        className="text-white font-bold text-xl md:text-2xl lg:text-3xl"
+      >
         Marko Ilic®
       </Link>
-      <ul className="flex justify-between items-center gap-40">
+      <ul className="justify-between items-center gap-8 hidden lg:flex xl:gap-[6vw]">
         {links.map(({ text, path }) => (
           <li key={path}>
             <Link
@@ -43,7 +46,7 @@ export default function Navbar() {
           </a>
         </li>
       </ul>
-      <button className="w-16 h-6 flex flex-col justify-between cursor-pointer">
+      <button className="flex flex-col justify-between cursor-pointer w-14 h-5 md:w-16 md:h-6">
         <div className="w-full h-1 bg-white"></div>
         <div className="w-full h-1 bg-white"></div>
       </button>

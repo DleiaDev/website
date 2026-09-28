@@ -18,7 +18,7 @@ export default function HeroGrid({ className }: { className?: string }) {
       </div>
 
       {/* Horizontal lines, each with a cross at every column intersection */}
-      <div className="absolute inset-0 flex flex-col justify-between py-32">
+      <div className="absolute inset-0 flex flex-col justify-between py-18 xs:py-20 sm:py-24 md:py-28 xl:py-32">
         {range(ROWS).map((r) => (
           <div key={r} className="relative h-px bg-white/20">
             <div

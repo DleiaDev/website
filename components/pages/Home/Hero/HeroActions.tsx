@@ -4,7 +4,7 @@ import { ArrowDown } from "lucide-react";
 
 export default function HeroActions() {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex gap-2 xl:flex-col">
       <HeroButton className="text-white bg-black hover:bg-black/60">
         Download CV
         <ArrowDown className="size-7" />

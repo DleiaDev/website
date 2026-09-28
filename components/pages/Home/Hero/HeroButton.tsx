@@ -10,7 +10,13 @@ export default function HeroButton({
     <Button
       variant="secondary"
       className={cn(
-        "w-72 h-14 cursor-pointer text-xl font-semibold uppercase",
+        "cursor-pointer font-semibold uppercase",
+        "text-sm w-40 h-12",
+        "xxxs:w-44 xxxs:h-12",
+        "xxs:w-52 xxs:h-12",
+        "xs:w-60 xs:h-12",
+        "lg:text-base lg:w-64 lg:h-12",
+        "xl:w-72 xl:h-14",
         className,
       )}
       {...props}
