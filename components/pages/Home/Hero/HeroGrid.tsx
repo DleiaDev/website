@@ -1,4 +1,4 @@
-import Cross from "@/components/pages/Home/Hero/Cross";
+import Cross from "@/components/Cross";
 import { PAGE_GUTTER } from "@/components/constants";
 import { cn } from "cn";
 
