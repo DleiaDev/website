@@ -1,4 +1,5 @@
 import GithubIcon from "@/components/GithubIcon";
+import Link from "@/components/Link";
 import HeroButton from "@/components/pages/Home/Hero/HeroButton";
 import { ArrowDown } from "lucide-react";
 
@@ -11,7 +12,7 @@ export default function HeroActions() {
       </HeroButton>
       <HeroButton
         nativeButton={false}
-        render={<a href="https://github.com/DleiaDev" target="_blank" />}
+        render={<Link href="https://github.com/DleiaDev" />}
       >
         Visit GitHub
         <GithubIcon className="size-7" />
