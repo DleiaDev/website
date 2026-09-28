@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroActions from "@/components/pages/Home/Hero/HeroActions";
 import HeroGrid from "@/components/pages/Home/Hero/HeroGrid";
-import { HERO_GUTTER } from "@/components/pages/Home/Hero/constants";
+import { PAGE_GUTTER } from "@/components/constants";
 import { cn } from "cn";
 import Image from "next/image";
 
@@ -13,11 +13,11 @@ export default function HomeHero() {
   return (
     <div className="overflow-hidden relative h-svh bg-linear-to-r from-[#b54220] to-[#ea562c]">
       {/* In-flow content, painted beneath all positioned layers */}
-      <div className={HERO_GUTTER}>
+      <div className={PAGE_GUTTER}>
         <Navbar />
 
-        <div className="text-white text-center uppercase mt-4 sm:mt-6 md:mt-8 lg:mt-16">
-          <h1 className="font-black leading-[90%] text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
+        <div className="text-white text-center uppercase mt-4 sm:mt-6 md:mt-8 2xl:mt-16">
+          <h1 className="font-black leading-[90%] text-5xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl">
             <span className="sr-only">Marko Ilic, </span>
             Software
             <br />
@@ -51,7 +51,7 @@ export default function HomeHero() {
         className={cn(
           "z-0 absolute inset-x-0 text-white/30 uppercase",
           "bottom-60 sm:bottom-[18svh] lg:bottom-[15svh]",
-          HERO_GUTTER,
+          PAGE_GUTTER,
         )}
       >
         {/* Shrink-wraps the name so the © line can align with its first glyph */}
@@ -93,7 +93,7 @@ export default function HomeHero() {
           "max-w-170 -right-52",
           "xs:max-w-190",
           "md:max-w-200",
-          "xl:max-w-240 xl:inset-x-0 xl:mx-auto",
+          "xl:max-w-[min(50%,calc(58svh*1254/871))] xl:inset-x-0 xl:mx-auto",
           // Cap width so the height (via aspect ratio) never exceeds 50svh
           "2xl:max-w-[min(50%,calc(60svh*1254/871))]",
         )}
@@ -108,7 +108,7 @@ export default function HomeHero() {
       <div
         className={cn(
           "z-50 w-full absolute bottom-12 flex justify-center xl:justify-end",
-          HERO_GUTTER,
+          PAGE_GUTTER,
         )}
       >
         <HeroActions />

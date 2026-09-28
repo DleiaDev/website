@@ -1,5 +1,5 @@
 import Cross from "@/components/pages/Home/Hero/Cross";
-import { HERO_GUTTER } from "@/components/pages/Home/Hero/constants";
+import { PAGE_GUTTER } from "@/components/constants";
 import { cn } from "cn";
 
 const ROWS = 4;
@@ -11,7 +11,7 @@ export default function HeroGrid({ className }: { className?: string }) {
   return (
     <div className={cn("pointer-events-none absolute inset-0", className)}>
       {/* Vertical lines */}
-      <div className={cn("absolute inset-0 flex justify-between", HERO_GUTTER)}>
+      <div className={cn("absolute inset-0 flex justify-between", PAGE_GUTTER)}>
         {range(COLS).map((c) => (
           <div key={c} className="w-px bg-white/20" />
         ))}
@@ -24,7 +24,7 @@ export default function HeroGrid({ className }: { className?: string }) {
             <div
               className={cn(
                 "absolute inset-0 flex justify-between",
-                HERO_GUTTER,
+                PAGE_GUTTER,
               )}
             >
               {range(COLS).map((c) => (
