@@ -56,7 +56,7 @@ export default function Navbar() {
         // still removes it from focus and the a11y tree, and visibility only
         // flips once the fade out finishes. The nav's horizontal padding comes
         // from its parent's PAGE_GUTTER, so the menu reuses it to line up.
-        className={`fixed inset-0 z-0 w-screen h-svh pt-(--nav-h) bg-black/90 transition-[opacity,visibility] duration-200 motion-reduce:transition-none ${
+        className={`fixed overflow-auto inset-0 z-0 w-screen h-svh pt-(--nav-h) bg-black/90 transition-[opacity,visibility] duration-200 motion-reduce:transition-none ${
           isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
@@ -66,7 +66,7 @@ export default function Navbar() {
           )}
         >
           <div className="pt-4 pb-8 xs:border-r xs:border-white/20 xs:flex-1 xs:pb-0 md:pt-8">
-            <ul className="flex flex-col gap-6 items-center xs:items-start lg:pr-16">
+            <ul className="flex flex-col gap-6 items-center xs:items-center xs:items-stretch lg:pr-16">
               {links.map(({ text, path }) => (
                 <li key={path} className="flex justify-between items-center">
                   <Link
@@ -82,7 +82,7 @@ export default function Navbar() {
               ))}
             </ul>
           </div>
-          <div className="flex text-white pt-8 pl-4 md:pt-8 justify-center border-t border-white/20 xs:pt-4 xs:border-none xs:justify-end xs:flex-1">
+          <div className="flex text-white pb-8 pt-8 pl-4 md:pt-8 justify-center border-t border-white/20 xs:pt-4 xs:border-none xs:justify-end xs:flex-1">
             <div className="inline-flex flex-col gap-10 md:gap-16">
               <NavbarInfoField
                 type="email"
