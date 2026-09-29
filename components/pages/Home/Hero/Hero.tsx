@@ -5,7 +5,7 @@ import HeroImage from "@/components/pages/Home/Hero/HeroImage";
 import {
   blurRiseIn,
   ENTRANCE_TRANSITION,
-} from "@/components/pages/Home/Hero/animations";
+} from "@/components/animations";
 import { PAGE_GUTTER } from "@/components/constants";
 import { cn } from "cn";
 import * as motion from "motion/react-client";

@@ -8,7 +8,7 @@ import GithubIcon from "./GithubIcon";
 import Cross from "./Cross";
 import { cn } from "cn";
 import { motion } from "motion/react";
-import { ENTRANCE_TRANSITION } from "@/components/pages/Home/Hero/animations";
+import { ENTRANCE_TRANSITION } from "@/components/animations";
 import NavbarInfoField from "./NavbarInfoField";
 import LinkedinIcon from "./LinkedinIcon";
 import InstagramIcon from "./InstagramIcon";

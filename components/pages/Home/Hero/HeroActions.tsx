@@ -1,7 +1,7 @@
 import GithubIcon from "@/components/GithubIcon";
 import Link from "@/components/Link";
 import HeroButton from "@/components/pages/Home/Hero/HeroButton";
-import { blurRiseIn } from "@/components/pages/Home/Hero/animations";
+import { blurRiseIn } from "@/components/animations";
 import { ArrowDown } from "lucide-react";
 import * as motion from "motion/react-client";
 

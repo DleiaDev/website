@@ -8,7 +8,7 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
-import { ENTRANCE_TRANSITION } from "@/components/pages/Home/Hero/animations";
+import { ENTRANCE_TRANSITION } from "@/components/animations";
 import Image from "next/image";
 import { useEffect } from "react";
 

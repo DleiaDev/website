@@ -1,10 +1,12 @@
+import ExperienceTimeline from "@/components/pages/Home/ExperienceTimeline/ExperienceTimeline";
 import HomeHero from "@/components/pages/Home/Hero/Hero";
 
 export default function Home() {
   return (
     <div>
       <HomeHero />
-      <p className="text-lg">
+      <ExperienceTimeline />
+      <p className="text-xl">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
         diam sed enim pretium aliquet nec nec dolor. Quisque blandit metus a
         hendrerit dictum. Donec eget ornare lectus. In in nunc ut mi porttitor
