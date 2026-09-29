@@ -7,6 +7,7 @@ import { PAGE_GUTTER } from "@/components/constants";
 import GithubIcon from "./GithubIcon";
 import Cross from "./Cross";
 import { cn } from "cn";
+import { motion } from "motion/react";
 import NavbarInfoField from "./NavbarInfoField";
 import LinkedinIcon from "./LinkedinIcon";
 import InstagramIcon from "./InstagramIcon";
@@ -43,7 +44,10 @@ export default function Navbar() {
   return (
     // z-60 lifts the nav (and its fixed menu) above the hero's z-0..z-50 layers.
     // --nav-h is shared with the menu, which inherits it despite being fixed.
-    <nav
+    <motion.nav
+      initial={{ opacity: 0, y: -8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className={cn(
         "relative z-60 flex justify-between items-center h-(--nav-h)",
         "[--nav-h:--spacing(18)] xs:[--nav-h:--spacing(20)] sm:[--nav-h:--spacing(24)] md:[--nav-h:--spacing(28)] xl:[--nav-h:--spacing(32)]",
@@ -173,6 +177,6 @@ export default function Navbar() {
           }`}
         ></div>
       </button>
-    </nav>
+    </motion.nav>
   );
 }

@@ -2,11 +2,18 @@ import Navbar from "@/components/Navbar";
 import HeroActions from "@/components/pages/Home/Hero/HeroActions";
 import HeroGrid from "@/components/pages/Home/Hero/HeroGrid";
 import HeroImage from "@/components/pages/Home/Hero/HeroImage";
+import { blurRiseIn } from "@/components/pages/Home/Hero/animations";
 import { PAGE_GUTTER } from "@/components/constants";
 import { cn } from "cn";
 import * as motion from "motion/react-client";
 
 const CAREER_START_YEAR = 2018;
+
+const TAGLINE_LINES = [
+  "I translate loose",
+  "ideas into production",
+  "software",
+];
 
 export default function HomeHero() {
   const currentYear = new Date().getFullYear();
@@ -20,7 +27,7 @@ export default function HomeHero() {
         <motion.div
           initial={{ opacity: 0, scale: 1.2, filter: "blur(12px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className="text-white text-center uppercase mt-4 sm:mt-6 md:mt-8 2xl:mt-16"
         >
           <h1 className="font-black leading-[90%] text-5xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl">
@@ -43,11 +50,11 @@ export default function HomeHero() {
             "xl:text-2xl",
           )}
         >
-          I translate loose
-          <br />
-          ideas into production
-          <br />
-          software
+          {TAGLINE_LINES.map((line, index) => (
+            <motion.span key={line} {...blurRiseIn(index)} className="block">
+              {line}
+            </motion.span>
+          ))}
         </p>
       </div>
 
@@ -61,7 +68,10 @@ export default function HomeHero() {
         )}
       >
         {/* Shrink-wraps the name so the © line can align with its first glyph */}
-        <div
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className={cn(
             "w-fit xl:mx-auto",
             "[--name-size:5rem]",
@@ -82,7 +92,7 @@ export default function HomeHero() {
           <p className="font-medium ml-[calc(var(--name-size)*0.06)] mt-[calc(var(--name-size)*-0.12)] text-lg sm:text-xl md:text-2xl">
             &copy;{currentYear}
           </p>
-        </div>
+        </motion.div>
       </div>
 
       <HeroGrid className="z-10" />
@@ -95,7 +105,7 @@ export default function HomeHero() {
           "md:max-w-200",
           "xl:max-w-[min(50%,calc(58svh*1254/871))] xl:inset-x-0 xl:mx-auto",
           // Cap width so the height (via aspect ratio) never exceeds 50svh
-          "2xl:max-w-[min(50%,calc(60svh*1254/871))]",
+          "2xl:max-w-[min(60%,calc(70svh*1254/871))]",
         )}
       />
 
