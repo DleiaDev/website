@@ -8,6 +8,7 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
+import { ENTRANCE_TRANSITION } from "@/components/pages/Home/Hero/animations";
 import Image from "next/image";
 import { useEffect } from "react";
 
@@ -18,8 +19,6 @@ const PARALLAX_FACTOR = 0.3;
 
 // Distance in px the image rises from on page load
 const ENTRANCE_OFFSET = 80;
-
-const ENTRANCE_TRANSITION = { duration: 0.5, ease: "easeOut" } as const;
 
 export default function HeroImage({ className }: { className?: string }) {
   const prefersReducedMotion = useReducedMotion();

@@ -8,6 +8,7 @@ import GithubIcon from "./GithubIcon";
 import Cross from "./Cross";
 import { cn } from "cn";
 import { motion } from "motion/react";
+import { ENTRANCE_TRANSITION } from "@/components/pages/Home/Hero/animations";
 import NavbarInfoField from "./NavbarInfoField";
 import LinkedinIcon from "./LinkedinIcon";
 import InstagramIcon from "./InstagramIcon";
@@ -47,7 +48,7 @@ export default function Navbar() {
     <motion.nav
       initial={{ opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      transition={ENTRANCE_TRANSITION}
       className={cn(
         "relative z-60 flex justify-between items-center h-(--nav-h)",
         "[--nav-h:--spacing(18)] xs:[--nav-h:--spacing(20)] sm:[--nav-h:--spacing(24)] md:[--nav-h:--spacing(28)] xl:[--nav-h:--spacing(32)]",

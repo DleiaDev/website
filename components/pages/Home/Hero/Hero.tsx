@@ -2,7 +2,10 @@ import Navbar from "@/components/Navbar";
 import HeroActions from "@/components/pages/Home/Hero/HeroActions";
 import HeroGrid from "@/components/pages/Home/Hero/HeroGrid";
 import HeroImage from "@/components/pages/Home/Hero/HeroImage";
-import { blurRiseIn } from "@/components/pages/Home/Hero/animations";
+import {
+  blurRiseIn,
+  ENTRANCE_TRANSITION,
+} from "@/components/pages/Home/Hero/animations";
 import { PAGE_GUTTER } from "@/components/constants";
 import { cn } from "cn";
 import * as motion from "motion/react-client";
@@ -27,7 +30,7 @@ export default function HomeHero() {
         <motion.div
           initial={{ opacity: 0, scale: 1.2, filter: "blur(12px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={ENTRANCE_TRANSITION}
           className="text-white text-center uppercase mt-4 sm:mt-6 md:mt-8 2xl:mt-16"
         >
           <h1 className="font-black leading-[90%] text-5xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl">
@@ -71,7 +74,7 @@ export default function HomeHero() {
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={ENTRANCE_TRANSITION}
           className={cn(
             "w-fit xl:mx-auto",
             "[--name-size:5rem]",
