@@ -61,7 +61,7 @@ export default function ExperienceTimeline() {
         id="experience-heading"
         className="text-center font-black uppercase leading-[90%] text-5xl sm:text-6xl md:text-7xl"
       >
-        My Experience
+        <span className="text-muted-foreground">My</span> Experience
       </motion.h2>
 
       {/* --dot-y centers the dot on the year's line box (leading-none, so half its font size) */}

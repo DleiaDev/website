@@ -24,7 +24,7 @@ export default function Certifications() {
         id="certifications-heading"
         className="text-center font-black uppercase leading-[90%] text-5xl sm:text-6xl md:text-7xl"
       >
-        My Certifications
+        <span className="text-muted-foreground">My</span> Certifications
       </motion.h2>
 
       <div className="mt-12 md:mt-16 flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16">
