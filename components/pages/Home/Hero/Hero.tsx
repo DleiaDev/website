@@ -1,9 +1,10 @@
 import Navbar from "@/components/Navbar";
 import HeroActions from "@/components/pages/Home/Hero/HeroActions";
 import HeroGrid from "@/components/pages/Home/Hero/HeroGrid";
+import HeroImage from "@/components/pages/Home/Hero/HeroImage";
 import { PAGE_GUTTER } from "@/components/constants";
 import { cn } from "cn";
-import Image from "next/image";
+import * as motion from "motion/react-client";
 
 const CAREER_START_YEAR = 2018;
 
@@ -16,7 +17,12 @@ export default function HomeHero() {
       <div className={PAGE_GUTTER}>
         <Navbar />
 
-        <div className="text-white text-center uppercase mt-4 sm:mt-6 md:mt-8 2xl:mt-16">
+        <motion.div
+          initial={{ opacity: 0, scale: 1.2, filter: "blur(12px)" }}
+          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-white text-center uppercase mt-4 sm:mt-6 md:mt-8 2xl:mt-16"
+        >
           <h1 className="font-black leading-[90%] text-5xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl">
             <span className="sr-only">Marko Ilic, </span>
             Software
@@ -26,7 +32,7 @@ export default function HomeHero() {
           <p className="font-extrabold mt-2 lg:text-2xl xl:text-3xl">
             With {currentYear - CAREER_START_YEAR} years of experience
           </p>
-        </div>
+        </motion.div>
 
         <p
           className={cn(
@@ -81,13 +87,7 @@ export default function HomeHero() {
 
       <HeroGrid className="z-10" />
 
-      <Image
-        src="/me.png"
-        alt="Marko Ilic"
-        width={1254}
-        height={871}
-        loading="eager"
-        fetchPriority="high"
+      <HeroImage
         className={cn(
           "z-20 absolute bottom-0 pointer-events-none",
           "max-w-170 -right-52",
