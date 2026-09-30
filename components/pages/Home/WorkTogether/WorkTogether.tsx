@@ -33,10 +33,10 @@ export default function WorkTogether() {
   return (
     <section
       aria-labelledby="work-together-heading"
-      className={cn("py-20 md:py-28", PAGE_GUTTER)}
+      className="relative isolate overflow-hidden bg-linear-to-r from-[#b54220] to-[#ea562c]"
     >
-      <div className="relative isolate overflow-hidden rounded-3xl bg-linear-to-r from-[#b54220] to-[#ea562c] px-6 py-16 sm:px-12 md:py-24 2xl:py-32">
-        <BackgroundGrid className="-z-10 opacity-60" />
+      <BackgroundGrid className="-z-10 opacity-60" />
+      <div className={cn("py-16 md:py-24 2xl:py-32", PAGE_GUTTER)}>
         {/* Soft light pooling behind the heading */}
         <div className="pointer-events-none absolute -top-1/2 left-1/2 -z-10 aspect-square w-[60rem] max-w-[150%] -translate-x-1/2 rounded-full bg-white/15 blur-3xl" />
 
