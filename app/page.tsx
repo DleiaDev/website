@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import AgenticWorkflow from "@/components/pages/Home/AgenticWorkflow/AgenticWorkflow";
 import Certifications from "@/components/pages/Home/Certifications/Certifications";
 import ExperienceTimeline from "@/components/pages/Home/ExperienceTimeline/ExperienceTimeline";
@@ -14,7 +15,7 @@ export default function Home() {
       <AgenticWorkflow />
       <Skills />
       <WorkTogether />
-      <div className="w-full h-[50svh]"></div>
+      <Footer />
     </div>
   );
 }

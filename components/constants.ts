@@ -14,3 +14,13 @@ export const NAV_HEIGHT =
 // behind the content and eases back in around it.
 export const GRID_BACKDROP =
   "bg-white/80 shadow-[0_0_80px_48px_rgb(255_255_255/0.7)]";
+
+// Anchors to the home page sections, shared by the navbar and footer. The
+// leading slash keeps them working from any other route.
+export const NAV_LINKS = [
+  { text: "Experience", path: "/#experience" },
+  { text: "Certifications", path: "/#certifications" },
+  { text: "Workflow", path: "/#workflow" },
+  { text: "Skills", path: "/#skills" },
+  { text: "Contact", path: "/#contact" },
+];

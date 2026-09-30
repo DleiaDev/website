@@ -2,7 +2,7 @@
 
 import Link from "./Link";
 import { useEffect, useState } from "react";
-import { NAV_HEIGHT, PAGE_GUTTER } from "@/components/constants";
+import { NAV_HEIGHT, NAV_LINKS, PAGE_GUTTER } from "@/components/constants";
 import GithubIcon from "./GithubIcon";
 import Cross from "./Cross";
 import { cn } from "cn";
@@ -11,16 +11,6 @@ import { ENTRANCE_TRANSITION } from "@/components/animations";
 import NavbarInfoField from "./NavbarInfoField";
 import LinkedinIcon from "./LinkedinIcon";
 import InstagramIcon from "./InstagramIcon";
-
-// Anchors to the home page sections. The leading slash keeps them working
-// from any other route.
-const links = [
-  { text: "Experience", path: "/#experience" },
-  { text: "Certifications", path: "/#certifications" },
-  { text: "Workflow", path: "/#workflow" },
-  { text: "Skills", path: "/#skills" },
-  { text: "Contact", path: "/#contact" },
-];
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -72,7 +62,7 @@ export default function Navbar() {
         >
           <div className="pt-4 pb-8 xs:border-r xs:border-white/20 xs:flex-1 xs:pb-0 md:pt-8">
             <ul className="flex flex-col gap-6 items-center xs:items-center xs:items-stretch lg:pr-16">
-              {links.map(({ text, path }) => (
+              {NAV_LINKS.map(({ text, path }) => (
                 <li key={path} className="flex justify-between items-center">
                   <Link
                     href={path}
@@ -135,7 +125,7 @@ export default function Navbar() {
           "xl:flex xl:gap-[4vw] 2xl:gap-[6vw]",
         )}
       >
-        {links.map(({ text, path }) => (
+        {NAV_LINKS.map(({ text, path }) => (
           <li key={path}>
             <Link
               href={path}
