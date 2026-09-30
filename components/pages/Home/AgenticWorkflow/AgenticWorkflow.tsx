@@ -39,6 +39,7 @@ const PRACTICES = [
 export default function AgenticWorkflow() {
   return (
     <section
+      id="workflow"
       aria-labelledby="agentic-workflow-heading"
       className={cn("relative isolate py-20 md:py-28", PAGE_GUTTER)}
     >

@@ -39,6 +39,7 @@ const TILE_STAGGER_DELAY = 0.04;
 export default function Skills() {
   return (
     <section
+      id="skills"
       aria-labelledby="skills-heading"
       className={cn("relative isolate py-20 md:py-28", PAGE_GUTTER)}
     >

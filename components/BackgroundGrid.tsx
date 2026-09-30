@@ -4,9 +4,10 @@ import { NAV_HEIGHT, PAGE_GUTTER } from "@/components/constants";
 import { cn } from "cn";
 import { useEffect, useRef, type CSSProperties } from "react";
 
-// Fixed so every grid on the site shares the same rhythm.
+// Fixed so every grid on the site shares the same rhythm. Columns run from
+// gutter to gutter, rows a fixed distance apart.
 const COLS = 4;
-const ROWS_PER_COLUMN_GAP = 2;
+const ROW_HEIGHT = 420;
 
 // Crosses span this many px along each axis, centered on the intersection
 const CROSS_SIZE = 12;
@@ -37,7 +38,7 @@ const rowLine = (color: string) =>
 
 const ROWS_STYLE: CSSProperties = {
   backgroundImage: rowLine(LINE_COLOR),
-  backgroundSize: "100% var(--grid-row)",
+  backgroundSize: `100% ${ROW_HEIGHT}px`,
   backgroundPositionY: ROW_POSITION_Y,
 };
 
@@ -49,7 +50,7 @@ const CROSSES_STYLE: CSSProperties = {
     rowLine("var(--grid-color)"),
     `linear-gradient(to bottom, var(--grid-color) ${CROSS_SIZE / 2}px, transparent ${CROSS_SIZE / 2}px calc(100% - ${CROSS_SIZE / 2}px), var(--grid-color) calc(100% - ${CROSS_SIZE / 2}px))`,
   ].join(", "),
-  backgroundSize: "100% var(--grid-row), 1px var(--grid-row)",
+  backgroundSize: `100% ${ROW_HEIGHT}px, 1px ${ROW_HEIGHT}px`,
   backgroundPosition: `0 ${ROW_POSITION_Y}, 50% ${ROW_POSITION_Y}`,
   backgroundRepeat: "repeat-y",
   width: CROSS_SIZE,
@@ -98,19 +99,8 @@ export default function BackgroundGrid({
         className,
       )}
     >
-      {/* Column lines. The container makes cqw the distance between the outer
-          columns, so rows split each square cell evenly. */}
-      <div
-        style={
-          {
-            "--grid-row": `calc(100cqw / ${COLS - 1} / ${ROWS_PER_COLUMN_GAP})`,
-          } as CSSProperties
-        }
-        className={cn(
-          "@container absolute inset-0 flex justify-between",
-          PAGE_GUTTER,
-        )}
-      >
+      {/* Column lines */}
+      <div className={cn("absolute inset-0 flex justify-between", PAGE_GUTTER)}>
         {/* Row lines, widened past the gutters to the grid's clipped edges */}
         <div
           style={ROWS_STYLE}

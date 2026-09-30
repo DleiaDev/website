@@ -32,6 +32,7 @@ const ACTION_ARROW =
 export default function WorkTogether() {
   return (
     <section
+      id="contact"
       aria-labelledby="work-together-heading"
       className="relative isolate overflow-hidden bg-linear-to-r from-[#b54220] to-[#ea562c]"
     >

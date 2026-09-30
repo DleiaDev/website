@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "./Link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { NAV_HEIGHT, PAGE_GUTTER } from "@/components/constants";
 import GithubIcon from "./GithubIcon";
@@ -13,16 +12,17 @@ import NavbarInfoField from "./NavbarInfoField";
 import LinkedinIcon from "./LinkedinIcon";
 import InstagramIcon from "./InstagramIcon";
 
+// Anchors to the home page sections. The leading slash keeps them working
+// from any other route.
 const links = [
-  { text: "Home", path: "/" },
-  { text: "About", path: "/about" },
-  { text: "Work", path: "/work" },
-  { text: "Services", path: "/services" },
-  { text: "Contact", path: "/contact" },
+  { text: "Experience", path: "/#experience" },
+  { text: "Certifications", path: "/#certifications" },
+  { text: "Workflow", path: "/#workflow" },
+  { text: "Skills", path: "/#skills" },
+  { text: "Contact", path: "/#contact" },
 ];
 
 export default function Navbar() {
-  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -78,9 +78,7 @@ export default function Navbar() {
                     href={path}
                     text={text}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`font-bold uppercase text-4xl md:text-5xl lg:text-6xl xl:text-7xl ${
-                      pathname === path ? "text-white" : "text-white/50"
-                    }`}
+                    className="font-bold uppercase text-white/50 hover:text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
                   />
                   <Cross width={16} height={16} className="hidden lg:block" />
                 </li>
@@ -141,9 +139,7 @@ export default function Navbar() {
             <Link
               href={path}
               text={text}
-              className={`text-white text-xl font-medium underline underline-offset-5 hover:text-white hover:decoration-white ${
-                pathname === path ? "decoration-white" : "decoration-white/50"
-              }`}
+              className="text-white text-xl font-medium underline underline-offset-5 decoration-white/50 hover:text-white hover:decoration-white"
             />
           </li>
         ))}

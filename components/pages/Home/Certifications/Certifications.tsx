@@ -17,6 +17,7 @@ const BADGE_IMAGE = cn(
 export default function Certifications() {
   return (
     <section
+      id="certifications"
       aria-labelledby="certifications-heading"
       className={cn("relative isolate py-20 md:py-28", PAGE_GUTTER)}
     >

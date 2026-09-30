@@ -54,6 +54,7 @@ export default function ExperienceTimeline() {
 
   return (
     <section
+      id="experience"
       aria-labelledby="experience-heading"
       className={cn("relative isolate py-20 md:py-28", PAGE_GUTTER)}
     >
