@@ -11,6 +11,7 @@ import { ENTRANCE_TRANSITION } from "@/components/animations";
 import NavbarInfoField from "./NavbarInfoField";
 import LinkedinIcon from "./LinkedinIcon";
 import InstagramIcon from "./InstagramIcon";
+import Logo from "./Logo";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -114,11 +115,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <Link
-        href="/"
-        text="Marko Ilic®"
-        className="relative z-10 text-white font-bold text-xl md:text-2xl lg:text-3xl"
-      />
+      <Logo className="relative z-10 text-xl lg:text-2xl" />
       <ul
         className={cn(
           `relative z-10 justify-between items-center text-xl gap-8 hidden transition-[opacity,visibility] duration-200 motion-reduce:transition-none ${isMenuOpen ? "opacity-0 invisible" : "opacity-100 visible"}`,

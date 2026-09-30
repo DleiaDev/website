@@ -4,6 +4,7 @@ import GithubIcon from "@/components/GithubIcon";
 import InstagramIcon from "@/components/InstagramIcon";
 import Link from "@/components/Link";
 import LinkedinIcon from "@/components/LinkedinIcon";
+import Logo from "@/components/Logo";
 import { cn } from "cn";
 import { ArrowUp } from "lucide-react";
 
@@ -23,7 +24,8 @@ const SOCIALS = [
   { label: "GitHub", href: "https://github.com/DleiaDev", Icon: GithubIcon },
 ];
 
-const HEADING = "text-sm font-semibold uppercase tracking-[0.25em] text-white/50";
+const HEADING =
+  "text-sm font-semibold uppercase tracking-[0.25em] text-white/50";
 
 const FOOTER_LINK =
   "text-white/80 underline-offset-5 hover:text-white hover:underline";
@@ -37,11 +39,8 @@ export default function Footer() {
       <div className={cn("pt-16 pb-8 md:pt-24", PAGE_GUTTER)}>
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <Link
-              href="/"
-              text="Marko Ilic®"
-              className="font-bold text-2xl lg:text-3xl hover:text-white"
-            />
+            {/* inline-block so the centered lines size to the logo, not the column */}
+            <Logo className="inline-block text-2xl lg:text-3xl" />
             <p className="mt-4 max-w-md text-white/70">
               Software engineer turning loose ideas into production software.
               Open to new projects, collaborations and full-time roles.
@@ -82,7 +81,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 md:mt-24 flex flex-col-reverse gap-4 border-t border-white/20 pt-8 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-16 md:mt-24 flex flex-col-reverse gap-4 pt-8 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {currentYear} Marko Ilic. All rights reserved.</p>
           {/* Plain anchor: browsers scroll an empty fragment to the top natively */}
           <a
