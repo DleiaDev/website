@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroActions from "@/components/pages/Home/Hero/HeroActions";
-import HeroGrid from "@/components/pages/Home/Hero/HeroGrid";
+import BackgroundGrid from "@/components/BackgroundGrid";
 import HeroImage from "@/components/pages/Home/Hero/HeroImage";
 import {
   blurRiseIn,
@@ -98,7 +98,7 @@ export default function HomeHero() {
         </motion.div>
       </div>
 
-      <HeroGrid className="z-10" />
+      <BackgroundGrid className="z-10" />
 
       <HeroImage
         className={cn(

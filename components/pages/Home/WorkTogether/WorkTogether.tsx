@@ -4,7 +4,7 @@ import { blurRiseInView } from "@/components/animations";
 import { CV_HREF, PAGE_GUTTER } from "@/components/constants";
 import Link from "@/components/Link";
 import LinkedinIcon from "@/components/LinkedinIcon";
-import HeroGrid from "@/components/pages/Home/Hero/HeroGrid";
+import BackgroundGrid from "@/components/BackgroundGrid";
 import { cn } from "cn";
 import { ArrowDown, ArrowUpRight, FileText, Mail } from "lucide-react";
 import { motion } from "motion/react";
@@ -36,7 +36,7 @@ export default function WorkTogether() {
       className={cn("py-20 md:py-28", PAGE_GUTTER)}
     >
       <div className="relative isolate overflow-hidden rounded-3xl bg-linear-to-r from-[#b54220] to-[#ea562c] px-6 py-16 sm:px-12 md:py-24 2xl:py-32">
-        <HeroGrid className="-z-10 opacity-60" />
+        <BackgroundGrid className="-z-10 opacity-60" />
         {/* Soft light pooling behind the heading */}
         <div className="pointer-events-none absolute -top-1/2 left-1/2 -z-10 aspect-square w-[60rem] max-w-[150%] -translate-x-1/2 rounded-full bg-white/15 blur-3xl" />
 
