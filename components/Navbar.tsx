@@ -130,16 +130,17 @@ export default function Navbar() {
         className="relative z-10 text-white font-bold text-xl md:text-2xl lg:text-3xl"
       />
       <ul
-        className={`relative z-10 justify-between items-center gap-8 hidden lg:flex xl:gap-[6vw] transition-[opacity,visibility] duration-200 motion-reduce:transition-none ${
-          isMenuOpen ? "opacity-0 invisible" : "opacity-100 visible"
-        }`}
+        className={cn(
+          `relative z-10 justify-between items-center text-xl gap-8 hidden transition-[opacity,visibility] duration-200 motion-reduce:transition-none ${isMenuOpen ? "opacity-0 invisible" : "opacity-100 visible"}`,
+          "xl:flex xl:gap-[4vw] 2xl:gap-[6vw]",
+        )}
       >
         {links.map(({ text, path }) => (
           <li key={path}>
             <Link
               href={path}
               text={text}
-              className="text-white text-xl font-medium underline underline-offset-5 decoration-white/50 hover:text-white hover:decoration-white"
+              className="text-white font-medium underline underline-offset-5 decoration-white/50 hover:text-white hover:decoration-white"
             />
           </li>
         ))}
