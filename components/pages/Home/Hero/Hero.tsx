@@ -2,10 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroActions from "@/components/pages/Home/Hero/HeroActions";
 import BackgroundGrid from "@/components/BackgroundGrid";
 import HeroImage from "@/components/pages/Home/Hero/HeroImage";
-import {
-  blurRiseIn,
-  ENTRANCE_TRANSITION,
-} from "@/components/animations";
+import { blurRiseIn, ENTRANCE_TRANSITION } from "@/components/animations";
 import { PAGE_GUTTER } from "@/components/constants";
 import { cn } from "cn";
 import * as motion from "motion/react-client";
@@ -50,7 +47,7 @@ export default function HomeHero() {
             "mt-10 text-center",
             "mt-10 text-center md:text-xl",
             "lg:text-left lg:mt-[3svh]",
-            "xl:text-2xl",
+            "xl:text-2xl xl:font-normal",
           )}
         >
           {TAGLINE_LINES.map((line, index) => (
