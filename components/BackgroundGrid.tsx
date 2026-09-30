@@ -42,16 +42,22 @@ const ROWS_STYLE: CSSProperties = {
   backgroundPositionY: ROW_POSITION_Y,
 };
 
+// Cross strips start half a cross above the row layers, so the first row's
+// crosses keep their upper arm. Their pattern shifts down to match.
+const CROSSES_TOP = `calc(var(--rows-top) - ${CROSS_SIZE / 2}px)`;
+const CROSS_POSITION_Y = `calc(${ROW_POSITION_Y} + ${CROSS_SIZE / 2}px)`;
+
 // Drawn on a CROSS_SIZE wide strip centered on each column line: the
 // horizontal arm fills the strip's width, the vertical arm reaches half the
 // cross size above and below each row.
 const CROSSES_STYLE: CSSProperties = {
+  top: CROSSES_TOP,
   backgroundImage: [
     rowLine("var(--grid-color)"),
     `linear-gradient(to bottom, var(--grid-color) ${CROSS_SIZE / 2}px, transparent ${CROSS_SIZE / 2}px calc(100% - ${CROSS_SIZE / 2}px), var(--grid-color) calc(100% - ${CROSS_SIZE / 2}px))`,
   ].join(", "),
   backgroundSize: `100% ${ROW_HEIGHT}px, 1px ${ROW_HEIGHT}px`,
-  backgroundPosition: `0 ${ROW_POSITION_Y}, 50% ${ROW_POSITION_Y}`,
+  backgroundPosition: `0 ${CROSS_POSITION_Y}, 50% ${CROSS_POSITION_Y}`,
   backgroundRepeat: "repeat-y",
   width: CROSS_SIZE,
 };
@@ -115,7 +121,7 @@ export default function BackgroundGrid({
           >
             <div
               style={CROSSES_STYLE}
-              className="absolute top-(--rows-top) bottom-0 left-1/2 -translate-x-1/2"
+              className="absolute bottom-0 left-1/2 -translate-x-1/2"
             />
           </div>
         ))}
