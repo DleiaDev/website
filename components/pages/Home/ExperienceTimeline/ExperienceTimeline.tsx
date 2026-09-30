@@ -1,7 +1,8 @@
 "use client";
 
 import { blurRiseInView } from "@/components/animations";
-import { PAGE_GUTTER } from "@/components/constants";
+import BackgroundGrid from "@/components/BackgroundGrid";
+import { GRID_BACKDROP, PAGE_GUTTER } from "@/components/constants";
 import TimelineRail from "@/components/pages/Home/ExperienceTimeline/TimelineRail";
 import { EXPERIENCE } from "@/components/pages/Home/ExperienceTimeline/experience";
 import { cn } from "cn";
@@ -54,8 +55,9 @@ export default function ExperienceTimeline() {
   return (
     <section
       aria-labelledby="experience-heading"
-      className={cn("py-20 md:py-28", PAGE_GUTTER)}
+      className={cn("relative isolate py-20 md:py-28", PAGE_GUTTER)}
     >
+      <BackgroundGrid surface="white" className="-z-10" />
       <motion.h2
         {...blurRiseInView(0)}
         id="experience-heading"
@@ -65,12 +67,14 @@ export default function ExperienceTimeline() {
       </motion.h2>
 
       {/* --dot-y centers the dot on the year's line box (leading-none, so half its font size) */}
-      <div className="mt-12 md:mt-16 w-full md:w-fit md:max-w-3xl 2xl:max-w-5xl md:mx-auto [--dot-y:1.5rem] 2xl:[--dot-y:2.25rem]">
+      <div
+        className={cn(
+          "mt-12 md:mt-16 w-full md:w-fit md:max-w-3xl 2xl:max-w-5xl md:mx-auto [--dot-y:1.5rem] 2xl:[--dot-y:2.25rem]",
+          GRID_BACKDROP,
+        )}
+      >
         {/* Lead-in line above the first entry */}
-        <motion.div
-          {...blurRiseInView(0)}
-          className={cn(ENTRY_GRID, "h-16")}
-        >
+        <motion.div {...blurRiseInView(0)} className={cn(ENTRY_GRID, "h-16")}>
           <TimelineRail
             active={false}
             withDot={false}

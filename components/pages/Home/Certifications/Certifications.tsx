@@ -1,7 +1,8 @@
 "use client";
 
 import { blurRiseInView } from "@/components/animations";
-import { PAGE_GUTTER } from "@/components/constants";
+import BackgroundGrid from "@/components/BackgroundGrid";
+import { GRID_BACKDROP, PAGE_GUTTER } from "@/components/constants";
 import { cn } from "cn";
 import { motion } from "motion/react";
 import Image from "next/image";
@@ -17,8 +18,9 @@ export default function Certifications() {
   return (
     <section
       aria-labelledby="certifications-heading"
-      className={cn("py-20 md:py-28", PAGE_GUTTER)}
+      className={cn("relative isolate py-20 md:py-28", PAGE_GUTTER)}
     >
+      <BackgroundGrid surface="white" className="-z-10" />
       <motion.h2
         {...blurRiseInView(0)}
         id="certifications-heading"
@@ -27,7 +29,12 @@ export default function Certifications() {
         <span className="text-muted-foreground">My</span> Certifications
       </motion.h2>
 
-      <div className="mt-12 md:mt-16 flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16">
+      <div
+        className={cn(
+          "mt-12 md:mt-16 w-fit mx-auto flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16",
+          GRID_BACKDROP,
+        )}
+      >
         <motion.a
           {...blurRiseInView(0)}
           href="https://www.linkedin.com/feed/update/urn:li:activity:7360631445846999040"

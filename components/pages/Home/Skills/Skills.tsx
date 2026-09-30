@@ -1,7 +1,8 @@
 "use client";
 
 import { blurRiseInView, ENTRANCE_TRANSITION } from "@/components/animations";
-import { PAGE_GUTTER } from "@/components/constants";
+import BackgroundGrid from "@/components/BackgroundGrid";
+import { GRID_BACKDROP, PAGE_GUTTER } from "@/components/constants";
 import { cn } from "cn";
 import { motion } from "motion/react";
 import Image from "next/image";
@@ -39,8 +40,9 @@ export default function Skills() {
   return (
     <section
       aria-labelledby="skills-heading"
-      className={cn("py-20 md:py-28", PAGE_GUTTER)}
+      className={cn("relative isolate py-20 md:py-28", PAGE_GUTTER)}
     >
+      <BackgroundGrid surface="white" className="-z-10" />
       <motion.h2
         {...blurRiseInView(0)}
         id="skills-heading"
@@ -49,7 +51,12 @@ export default function Skills() {
         <span className="text-muted-foreground">My</span> Skills
       </motion.h2>
 
-      <ul className="mt-12 md:mt-16 mx-auto max-w-7xl 2xl:max-w-[96rem] grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-3 md:gap-4">
+      <ul
+        className={cn(
+          "mt-12 md:mt-16 mx-auto max-w-7xl 2xl:max-w-[96rem] grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-3 md:gap-4",
+          GRID_BACKDROP,
+        )}
+      >
         {SKILLS.map(({ name, icon }, index) => (
           <motion.li
             key={icon}

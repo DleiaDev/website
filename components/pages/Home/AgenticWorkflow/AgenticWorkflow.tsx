@@ -1,7 +1,8 @@
 "use client";
 
 import { blurRiseInView } from "@/components/animations";
-import { PAGE_GUTTER } from "@/components/constants";
+import BackgroundGrid from "@/components/BackgroundGrid";
+import { GRID_BACKDROP, PAGE_GUTTER } from "@/components/constants";
 import Link from "@/components/Link";
 import { cn } from "cn";
 import { Boxes, FlaskConical, RefreshCcw, Waypoints } from "lucide-react";
@@ -39,8 +40,9 @@ export default function AgenticWorkflow() {
   return (
     <section
       aria-labelledby="agentic-workflow-heading"
-      className={cn("py-20 md:py-28", PAGE_GUTTER)}
+      className={cn("relative isolate py-20 md:py-28", PAGE_GUTTER)}
     >
+      <BackgroundGrid surface="white" className="-z-10" />
       <motion.h2
         {...blurRiseInView(0)}
         id="agentic-workflow-heading"
@@ -66,7 +68,12 @@ export default function AgenticWorkflow() {
         .
       </motion.p>
 
-      <ul className="mt-12 md:mt-16 mx-auto max-w-7xl 2xl:max-w-[96rem] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6">
+      <ul
+        className={cn(
+          "mt-12 md:mt-16 mx-auto max-w-7xl 2xl:max-w-[96rem] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6",
+          GRID_BACKDROP,
+        )}
+      >
         {PRACTICES.map(({ title, description, Icon }, index) => (
           <motion.li
             key={title}

@@ -3,7 +3,7 @@
 import Link from "./Link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { PAGE_GUTTER } from "@/components/constants";
+import { NAV_HEIGHT, PAGE_GUTTER } from "@/components/constants";
 import GithubIcon from "./GithubIcon";
 import Cross from "./Cross";
 import { cn } from "cn";
@@ -51,7 +51,7 @@ export default function Navbar() {
       transition={ENTRANCE_TRANSITION}
       className={cn(
         "relative z-60 flex justify-between items-center h-(--nav-h)",
-        "[--nav-h:--spacing(18)] xs:[--nav-h:--spacing(20)] sm:[--nav-h:--spacing(24)] md:[--nav-h:--spacing(28)] xl:[--nav-h:--spacing(32)]",
+        NAV_HEIGHT,
       )}
     >
       {/* Full screen menu, painted beneath the nav's other children (z-10) */}
