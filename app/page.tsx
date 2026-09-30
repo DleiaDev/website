@@ -3,6 +3,7 @@ import Certifications from "@/components/pages/Home/Certifications/Certification
 import ExperienceTimeline from "@/components/pages/Home/ExperienceTimeline/ExperienceTimeline";
 import HomeHero from "@/components/pages/Home/Hero/Hero";
 import Skills from "@/components/pages/Home/Skills/Skills";
+import WorkTogether from "@/components/pages/Home/WorkTogether/WorkTogether";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Certifications />
       <AgenticWorkflow />
       <Skills />
+      <WorkTogether />
       <div className="w-full h-[50svh]"></div>
     </div>
   );
