@@ -25,9 +25,12 @@ export default function Certifications() {
       <motion.h2
         {...blurRiseInView(0)}
         id="certifications-heading"
-        className="text-center font-black uppercase leading-[90%] text-5xl sm:text-6xl md:text-7xl"
+        className="flex flex-wrap justify-center items-center gap-2 font-black uppercase leading-[90%] text-5xl sm:text-6xl md:text-7xl"
       >
-        <span className="text-muted-foreground">My</span> Certifications
+        <span className="text-muted-foreground">My</span>
+        <span className="text-[38px] xxxs:text-[42px] xxs:text-[length:inherit]">
+          Certifications
+        </span>
       </motion.h2>
 
       <div

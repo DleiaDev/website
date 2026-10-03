@@ -30,7 +30,7 @@ export default function HomeHero() {
           transition={ENTRANCE_TRANSITION}
           className="text-white text-center uppercase mt-4 sm:mt-6 md:mt-8 2xl:mt-16"
         >
-          <h1 className="font-black leading-[90%] text-5xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl">
+          <h1 className="font-black leading-[90%] text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl">
             <span className="sr-only">Marko Ilic, </span>
             Software
             <br />
@@ -44,8 +44,9 @@ export default function HomeHero() {
         <p
           className={cn(
             "text-white font-medium uppercase",
-            "mt-10 text-center",
-            "mt-10 text-center md:text-xl",
+            "mt-4 text-center",
+            "sm:mt-6",
+            "md:text-xl md:mt-10",
             "lg:text-left lg:mt-[3svh]",
             "xl:text-2xl xl:font-normal",
           )}
@@ -63,7 +64,7 @@ export default function HomeHero() {
         aria-hidden
         className={cn(
           "z-0 absolute inset-x-0 text-white/30 uppercase",
-          "bottom-60 sm:bottom-[18svh] lg:bottom-[15svh]",
+          "bottom-40 xs:bottom-60 sm:bottom-[18svh] lg:bottom-[15svh]",
           PAGE_GUTTER,
         )}
       >
